@@ -22,7 +22,7 @@ namespace NLayerProject.Repository.Context
 
 
         //To be accessed via product object
-        //public DbSet<ProductFeature> ProductFeatures { get; set; }
+       public DbSet<ProductFeature> ProductFeatures { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
