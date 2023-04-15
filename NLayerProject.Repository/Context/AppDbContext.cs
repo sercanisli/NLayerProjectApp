@@ -29,6 +29,20 @@ namespace NLayerProject.Repository.Context
         {
             //We accessed our configurations from here and run it.
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+
+            //******** - Seed Process in DbContext.
+            modelBuilder.Entity<ProductFeature>().HasData(new ProductFeature()
+            {
+                Id=1, Color="Red", Height=100, Width=100, ProductId=1
+            },
+            new ProductFeature()
+            {
+                Id = 2, Color = "Blue", Height = 300, Width = 100, ProductId = 2
+            });
+            //******** - Seed Process in DbContext.
+
+
             base.OnModelCreating(modelBuilder);
 
             //modelBuilder.ApplyConfiguration(new ProductConfiguration());
