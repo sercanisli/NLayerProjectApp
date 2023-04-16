@@ -6,6 +6,8 @@ using NLayerProject.Core.UnitOfWorks;
 using NLayerProject.Repository.Context;
 using NLayerProject.Repository.Repositories;
 using NLayerProject.Repository.UnitOfWorks;
+using NLayerProject.Service.Mapping;
+using NLayerProject.Service.Services;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -21,8 +23,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositories<>));
+builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 
-//builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+builder.Services.AddAutoMapper(typeof(MapProfile));
 
 
 //*Declaring ConnectionString to EfCore

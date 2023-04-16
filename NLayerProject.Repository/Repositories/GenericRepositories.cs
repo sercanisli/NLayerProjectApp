@@ -36,7 +36,7 @@ namespace NLayerProject.Repository.Repositories
             return await _dbset.AnyAsync(expression);
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetAll()
         {
             //AsNoTracking : EfCore does not store the data it has taken into memory
             return _dbset.AsNoTracking().AsQueryable();

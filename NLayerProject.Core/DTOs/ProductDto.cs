@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayerProject.Core
+namespace NLayerProject.Core.DTOs
 {
-    public class Product : BaseEntity
+    public class ProductDto : BaseDto
     {
         public string Name { get; set; }
         public int Stock { get; set; }
@@ -14,8 +14,5 @@ namespace NLayerProject.Core
 
 
         public int CategoryId { get; set; }
-        public Category Category { get; set; } //Navigation Property
-        public ProductFeature ProductFeature { get; set; }  //Navigation Property
-
     }
 }
