@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace NLayerProject.Repository.Repositories
 {
-    public class GenericRepositories<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly AppDbContext _context;
         private readonly DbSet<T> _dbset;
 
-        public GenericRepositories(AppDbContext appDbContext)
+        public GenericRepository(AppDbContext appDbContext)
         {
             _context = appDbContext;
             _dbset = _context.Set<T>();
